@@ -1,6 +1,6 @@
 # TEAM NCS · NIST Counselling Services Website
 
-> *"You don't have to figure it out alone."*
+> *"UNITED WE STAND ,DIVIDED WE FALL."*
 
 Official production website for **TEAM NCS**, the student-run counselling team at NIST working alongside the institute's Counselling Services. Built around **"The Confluence"** (Sangam) metaphor: every student arrives as a separate stream of light with individual worries and rhythm; at NCS, the streams meet, creating a calmer, stronger community.
 

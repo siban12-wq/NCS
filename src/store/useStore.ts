@@ -106,7 +106,7 @@ export const useStore = create<AppState>((set, get) => ({
   setQualityOverride: (qualityOverride) => set({ qualityOverride }),
 
   // Reduced motion
-  reducedMotion: typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+  reducedMotion: typeof window !== 'undefined' && typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false,
   setReducedMotion: (reducedMotion) => set({ reducedMotion }),
 
   // Mood

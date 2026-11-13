@@ -14,6 +14,13 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+*.env
+!.env.example
+
 # Editor & OS files
 .vscode/
 .idea/
