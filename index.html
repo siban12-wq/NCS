@@ -1,17 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TEAM NCS · NIST Counselling Services</title>
-    <meta name="description" content="TEAM NCS is the student-run Counselling Services team at NIST." />
+    <meta name="description" content="TEAM NCS is the student-run Counselling Services team at NIST. You don't have to figure it out alone." />
     <meta name="theme-color" content="#12163A" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="TEAM NCS · NIST Counselling Services" />
+    <meta property="og:description" content="You don't have to figure it out alone. Student-run counselling support at NIST." />
+    <meta property="og:image" content="/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
-  <body style="margin:0;min-height:100vh;display:grid;place-items:center;background:linear-gradient(#12163A,#3d2f6e 60%,#FFC9A3);color:#F8F6FF;font-family:Georgia,serif;text-align:center">
-    <main>
-      <h1>You don't have to figure it out alone.</h1>
-      <p>TEAM NCS · Student-run counselling support at NIST</p>
-      <p><a style="color:#FFE2A8" href="https://www.instagram.com/the_team_ncs">@the_team_ncs</a></p>
-    </main>
+  <body>
+    <!-- Fallback for users with JavaScript disabled (preserved from original scaffold) -->
+    <noscript>
+      <div style="min-height:100vh;display:grid;place-items:center;background:linear-gradient(#12163A,#3d2f6e 60%,#FFC9A3);color:#F8F6FF;font-family:Georgia,serif;text-align:center;padding:2rem;">
+        <main>
+          <h1>You don't have to figure it out alone.</h1>
+          <p>TEAM NCS · Student-run counselling support at NIST</p>
+          <p><a style="color:#FFE2A8" href="https://www.instagram.com/the_team_ncs">@the_team_ncs</a></p>
+        </main>
+      </div>
+    </noscript>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

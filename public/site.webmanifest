@@ -1,0 +1,16 @@
+{
+  "name": "TEAM NCS · NIST Counselling Services",
+  "short_name": "TEAM NCS",
+  "description": "Student-run Counselling Services team at NIST. You don't have to figure it out alone.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#12163A",
+  "theme_color": "#12163A",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
