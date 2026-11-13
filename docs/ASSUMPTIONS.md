@@ -5,7 +5,7 @@ This document records architectural, design, and implementation decisions made a
 ## 1. Environment & Architecture
 - **Runtime & Tooling:** Vite + React 18 + TypeScript (strict) on Windows (PowerShell compatible).
 - **Styling:** Tailwind CSS with CSS variables on `:root` and `[data-theme='dark']` / `[data-theme='light']`.
-- **Motion & 3D:** Three.js, React Three Fiber (R3F v8 line for React 18), Drei (v9), Postprocessing (v2), GSAP + ScrollTrigger, Lenis for unified scroll physics.
+- **Motion & 3D:** Three.js, React Three Fiber (R3F v8 line for React 18), Drei (v9), Postprocessing (`@react-three/postprocessing` v2 line with `postprocessing` ^6.36.0 peer dependency), GSAP + ScrollTrigger, Lenis for unified scroll physics.
 - **Scroll Sync:** A central Zustand store holds normalized scroll `progress` (0 to 1), synchronized via Lenis. Both DOM sections and the R3F CameraRig reference `sectionRanges` defined in `src/content/site.ts`.
 
 ## 2. Content & Privacy

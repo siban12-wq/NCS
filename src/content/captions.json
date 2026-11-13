@@ -1,0 +1,145 @@
+{
+  "campus-01": {
+    "id": "campus-01",
+    "chapter": "campus",
+    "alt": "A white multi-storey campus building with a curved driveway and trees",
+    "caption": "Morning light on campus.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-03": {
+    "id": "campus-03",
+    "chapter": "campus",
+    "alt": "A wide campus building with a curved roof surrounded by trees, hills behind",
+    "caption": "Green, open and full of sky.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-04": {
+    "id": "campus-04",
+    "chapter": "campus",
+    "alt": "A modern campus building with a blue glass facade and palm trees",
+    "caption": "Where the days begin.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-05": {
+    "id": "campus-05",
+    "chapter": "campus",
+    "alt": "A tall white campus building with arched balconies",
+    "caption": "Corridors we all know.",
+    "story": null,
+    "year": 2026,
+    "journey": false,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-06": {
+    "id": "campus-06",
+    "chapter": "campus",
+    "alt": "A white campus building framed by coconut palms and a walkway",
+    "caption": "Palms and long walks.",
+    "story": null,
+    "year": 2026,
+    "journey": false,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-07": {
+    "id": "campus-07",
+    "chapter": "campus",
+    "alt": "Campus buildings rising above dense green trees",
+    "caption": "Above the treetops.",
+    "story": null,
+    "year": 2026,
+    "journey": false,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-08": {
+    "id": "campus-08",
+    "chapter": "campus",
+    "alt": "A red-paved pathway lined with potted plants leading to a campus building",
+    "caption": "The path in.",
+    "story": null,
+    "year": 2026,
+    "journey": false,
+    "hidden": false,
+    "needsReview": false
+  },
+  "campus-hills": {
+    "id": "campus-hills",
+    "chapter": "campus",
+    "alt": "NIST campus buildings among green trees with hills in the background",
+    "caption": "Our campus, with the hills beyond.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": false
+  },
+  "celebration": {
+    "id": "celebration",
+    "chapter": "celebrate",
+    "alt": "A large group of smiling students gathered around a table with a cake under a white canopy",
+    "caption": "Small celebrations, big smiles.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": true
+  },
+  "help-desk": {
+    "id": "help-desk",
+    "chapter": "support",
+    "alt": "TEAM NCS members in royal-blue polos seated at a help desk with laptops and papers",
+    "caption": "The NCS help desk during the Parent-Teacher Meeting 2026.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": true
+  },
+  "team-in-blue": {
+    "id": "team-in-blue",
+    "chapter": "team",
+    "alt": "TEAM NCS members in matching royal-blue polos posing together indoors in front of decorations",
+    "caption": "The streams that met — TEAM NCS in blue.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": true
+  },
+  "team-on-duty": {
+    "id": "team-on-duty",
+    "chapter": "team",
+    "alt": "A large group of students, several in royal-blue NCS polos, standing together outside a campus building",
+    "caption": "Team on duty, in blue polos and campus lanyards.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": true
+  },
+  "under-the-trees": {
+    "id": "under-the-trees",
+    "chapter": "team",
+    "alt": "A group of students with campus ID lanyards smiling together under green trees",
+    "caption": "A quiet moment under the trees.",
+    "story": null,
+    "year": 2026,
+    "journey": true,
+    "hidden": false,
+    "needsReview": true
+  }
+}
