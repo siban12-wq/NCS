@@ -1,0 +1,5 @@
+{
+  "_comment": "Per-photo captions. Keys are file names. Set \"hidden\": true to remove a photo from the site without deleting it. \"featured\": true puts it in the 3D journey. TODO: confirm captions with the team.",
+  "help-desk.jpg": { "caption": "The NCS help desk during the Parent-Teacher Meeting 2026.", "alt": "TEAM NCS members in royal-blue polos seated at a help desk with laptops and papers", "year": 2026, "featured": true },
+  "team-on-duty.jpg": { "caption": "Team on duty, in blue polos and campus lanyards.", "alt": "A large group of students, several in royal-blue NCS polos, standing together outside a campus building", "year": 2026, "featured": true }
+}

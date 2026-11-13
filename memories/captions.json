@@ -1,0 +1,11 @@
+{
+  "_comment": "Campus photos. campus-hills.jpg is also used as the blurred backdrop behind the 3D memories (see site.ts → memories.campusBackdrop).",
+  "campus-hills.jpg": { "caption": "Our campus, with the hills beyond.", "alt": "NIST campus buildings among green trees with hills in the background", "featured": true },
+  "campus-01.jpg": { "caption": "Morning light on campus.", "alt": "A white multi-storey campus building with a curved driveway and trees", "featured": true },
+  "campus-03.jpg": { "caption": "Green, open and full of sky.", "alt": "A wide campus building with a curved roof surrounded by trees, hills behind", "featured": true },
+  "campus-04.jpg": { "caption": "Where the days begin.", "alt": "A modern campus building with a blue glass facade and palm trees", "featured": true },
+  "campus-05.jpg": { "caption": "Corridors we all know.", "alt": "A tall white campus building with arched balconies" },
+  "campus-06.jpg": { "caption": "Palms and long walks.", "alt": "A white campus building framed by coconut palms and a walkway" },
+  "campus-07.jpg": { "caption": "Above the treetops.", "alt": "Campus buildings rising above dense green trees" },
+  "campus-08.jpg": { "caption": "The path in.", "alt": "A red-paved pathway lined with potted plants leading to a campus building" }
+}
