@@ -20,3 +20,4 @@ const faviconSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100
 
 fs.writeFileSync(path.resolve('public/favicon.svg'), faviconSvg, 'utf8');
 console.log('Generated public/brand/logo.svg and public/favicon.svg');
+
