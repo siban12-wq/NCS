@@ -19,6 +19,17 @@ export const Hero: React.FC = () => {
       className="relative min-h-screen flex flex-col items-center justify-center text-center px-4 pt-24 pb-12 overflow-hidden pointer-events-none"
     >
       <div className="max-w-4xl mx-auto flex flex-col items-center pointer-events-auto">
+        <Reveal delay={50}>
+          <div className="relative mb-4 flex items-center justify-center">
+            <div className="absolute -inset-3 rounded-full bg-teal/25 blur-xl animate-pulse" />
+            <img
+              src="/brand/logo-white.png"
+              alt="TEAM NCS Heart Emblem"
+              className="relative w-20 h-20 sm:w-24 sm:h-24 object-contain drop-shadow-[0_0_24px_rgba(94,211,200,0.45)] transition-transform duration-700 hover:scale-105"
+            />
+          </div>
+        </Reveal>
+
         <Reveal delay={100}>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-panel border border-white/20 text-xs font-semibold text-teal tracking-wide uppercase mb-6 shadow-lg">
             <Sparkles className="w-3.5 h-3.5 text-gold" />
@@ -28,13 +39,13 @@ export const Hero: React.FC = () => {
 
         <Reveal delay={250}>
           <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-paper leading-[1.1] mb-6">
-            You don&apos;t have to figure it out alone.
+            United we stand, divided we fall.
           </h1>
         </Reveal>
 
         <Reveal delay={400}>
           <p className="max-w-2xl text-base sm:text-xl text-lavender font-light leading-relaxed mb-8">
-            Every student arrives as a separate stream of light with individual worries and pace.
+            You don&apos;t have to figure it out alone. Every student arrives as a separate stream of light with individual worries and pace.
             At <strong className="font-semibold text-paper">TEAM NCS</strong>, our streams meet — creating a calmer, stronger community.
           </p>
         </Reveal>

@@ -216,3 +216,4 @@ describe('Serverless Function: submit-question.ts Hardening Tests', () => {
     expect(allLogs).not.toContain(clientIp);
   });
 });
+

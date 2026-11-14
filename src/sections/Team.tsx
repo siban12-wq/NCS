@@ -30,8 +30,12 @@ export const Team: React.FC = () => {
         <Reveal delay={150}>
           <div className="mb-12 glass-panel p-6 sm:p-8 rounded-3xl border border-royal/40 bg-gradient-to-r from-royal/30 via-indigo-900/60 to-royal/20 flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-2xl bg-royal border border-white/20 flex items-center justify-center text-white shadow-xl shadow-royal/40">
-                <Sparkles className="w-7 h-7" />
+              <div className="w-14 h-14 rounded-2xl bg-royal border border-white/20 flex items-center justify-center p-2.5 shadow-xl shadow-royal/40">
+                <img
+                  src="/brand/logo-white.png"
+                  alt="TEAM NCS Royal Blue Polo Emblem"
+                  className="w-full h-full object-contain drop-shadow"
+                />
               </div>
               <div>
                 <h3 className="font-display text-xl font-bold text-paper">

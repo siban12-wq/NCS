@@ -1,8 +1,35 @@
-import React, { useRef, useMemo } from 'react';
+import React, { useRef, useMemo, Suspense } from 'react';
 import { useFrame } from '@react-three/fiber';
+import { useTexture } from '@react-three/drei';
 import * as THREE from 'three';
 import { orbVertexShader, orbFragmentShader } from '@/shaders/orb';
 import { useStore } from '@/store/useStore';
+
+const LogoCore: React.FC = () => {
+  const texture = useTexture('/brand/logo-white.png');
+  const meshRef = useRef<THREE.Mesh>(null);
+
+  useFrame(({ clock }) => {
+    if (!meshRef.current) return;
+    const t = clock.getElapsedTime();
+    // Gentle floating and subtle pulse
+    const scale = 0.55 + Math.sin(t * 1.5) * 0.03;
+    meshRef.current.scale.set(scale, scale, 1);
+  });
+
+  return (
+    <mesh ref={meshRef} position={[0, 0, 0.05]}>
+      <planeGeometry args={[1, 1]} />
+      <meshBasicMaterial
+        map={texture}
+        transparent
+        opacity={0.85}
+        blending={THREE.AdditiveBlending}
+        depthWrite={false}
+      />
+    </mesh>
+  );
+};
 
 export const Orb: React.FC = () => {
   const meshRef = useRef<THREE.Mesh>(null);
@@ -58,6 +85,11 @@ export const Orb: React.FC = () => {
           blending={THREE.AdditiveBlending}
         />
       </mesh>
+
+      {/* Embedded Official NCS Logo at the Confluence Core */}
+      <Suspense fallback={null}>
+        <LogoCore />
+      </Suspense>
     </group>
   );
 };

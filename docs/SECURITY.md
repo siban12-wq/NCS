@@ -82,3 +82,4 @@ If an API key is leaked or an account is compromised:
 3. [ ] **Trigger Immediate Redeployment:** Deploy latest clean commit to clear cache.
 4. [ ] **Audit Git History:** Ensure secrets were not committed to public repositories. If committed, purge git history using `git-filter-repo` and rotate credentials.
 5. [ ] **Notify Club Admins:** Alert faculty advisors and executive student coordinators.
+

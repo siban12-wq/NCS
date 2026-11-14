@@ -25,8 +25,9 @@ export interface SectionRange {
 export const siteConfig = {
   name: 'TEAM NCS',
   fullName: 'NIST Counselling Services',
-  tagline: "You don't have to figure it out alone.",
-  subtagline: 'Student-run peer counselling support at NIST',
+  tagline: 'United we stand, divided we fall.',
+  subtagline: "You don't have to figure it out alone · Student-run peer support at NIST",
+  logo: '/brand/logo-white.png',
   instagram: {
     handle: '@the_team_ncs',
     url: 'https://www.instagram.com/the_team_ncs',

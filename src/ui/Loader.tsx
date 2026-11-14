@@ -52,11 +52,15 @@ export const Loader: React.FC<LoaderProps> = ({ onFinish }) => {
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-indigo-900 transition-opacity duration-700 pointer-events-auto"
     >
       <div className="flex flex-col items-center gap-6 max-w-sm px-6 text-center">
-        {/* Converging streams animated symbol */}
-        <div className="relative w-16 h-16 flex items-center justify-center">
-          <div className="absolute inset-0 rounded-full border-2 border-teal/30 animate-ping opacity-75" />
-          <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-royal via-teal to-peach animate-spin duration-3000 flex items-center justify-center shadow-[0_0_24px_#5ED3C8]" />
-          <div className="absolute w-4 h-4 rounded-full bg-paper shadow-md" />
+        {/* Converging streams animated symbol with official NCS logo */}
+        <div className="relative w-20 h-20 flex items-center justify-center">
+          <div className="absolute inset-0 rounded-full border-2 border-teal/40 animate-ping opacity-60" />
+          <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-royal via-teal to-peach opacity-30 animate-pulse blur-md" />
+          <img
+            src="/brand/logo-white.png"
+            alt="TEAM NCS Logo"
+            className="relative w-14 h-14 object-contain drop-shadow-[0_0_15px_#5ED3C8] animate-pulse"
+          />
         </div>
 
         <div>
@@ -64,7 +68,7 @@ export const Loader: React.FC<LoaderProps> = ({ onFinish }) => {
             TEAM NCS
           </h2>
           <p className="text-xs text-lavender mt-1">
-            The Confluence · You don&apos;t have to figure it out alone.
+            United we stand, divided we fall · The Confluence
           </p>
         </div>
 

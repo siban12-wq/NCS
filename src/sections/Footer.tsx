@@ -41,10 +41,12 @@ export const Footer: React.FC = () => {
         {/* Links & Navigation */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="md:col-span-2 space-y-3">
-            <div className="flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-royal to-teal flex items-center justify-center text-[10px] font-bold text-white">
-                NCS
-              </div>
+            <div className="flex items-center gap-2.5">
+              <img
+                src="/brand/logo-white.png"
+                alt="TEAM NCS Official Logo"
+                className="w-7 h-7 object-contain drop-shadow"
+              />
               <h3 className="font-display text-xl font-bold tracking-wide">
                 {siteConfig.name}
               </h3>

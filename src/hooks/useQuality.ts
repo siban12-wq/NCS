@@ -4,36 +4,45 @@ import { getDeviceSpecs, hasWebGL } from '@/lib/device';
 
 export function useQuality() {
   const quality = useStore((state) => state.quality);
-  const qualityOverride = useStore((state) => state.qualityOverride);
   const setQuality = useStore((state) => state.setQuality);
 
   useEffect(() => {
-    // If user has explicitly overridden, respect that
-    if (qualityOverride !== 'auto') {
-      setQuality(qualityOverride);
-      return;
-    }
-
-    // Step 1: Initial determination from device specs
+    // 100% Automatic Graphics Optimization as per phone / hardware
     const specs = getDeviceSpecs();
     if (!specs.hasGL || !hasWebGL()) {
       setQuality('lite');
       return;
     }
 
-    let initialTier: QualityTier = 'high';
-    if (specs.isMobile || specs.memory < 4 || specs.cores < 4) {
-      initialTier = 'medium';
-    }
-    if (specs.memory <= 2 || specs.cores <= 2) {
-      initialTier = 'low';
+    const isPhone =
+      specs.isMobile ||
+      (typeof window !== 'undefined' &&
+        (window.innerWidth < 768 ||
+          /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)));
+
+    let autoTier: QualityTier = 'high';
+
+    if (isPhone) {
+      // Automatically optimize graphics for phones for smooth 60fps & battery conservation
+      if (specs.memory <= 2 || specs.cores <= 2) {
+        autoTier = 'low';
+      } else {
+        autoTier = 'medium';
+      }
+    } else {
+      // Desktop / Laptop
+      if (specs.memory < 4 || specs.cores < 4) {
+        autoTier = 'medium';
+      } else {
+        autoTier = 'high';
+      }
     }
 
-    setQuality(initialTier);
+    setQuality(autoTier);
 
-    // Step 2: 1.5-second FPS probe
+    // Dynamic 1.5-second FPS probe: automatically steps down if phone experiences frame drops
     let frameCount = 0;
-    let startTime = performance.now();
+    const startTime = performance.now();
     let animId: number;
 
     const probe = (now: number) => {
@@ -43,11 +52,10 @@ export function useQuality() {
         animId = requestAnimationFrame(probe);
       } else {
         const fps = (frameCount / elapsed) * 1000;
-        // If FPS < 30 on initial tier, downgrade
-        if (fps < 24) {
-          if (initialTier === 'high') setQuality('medium');
-          else if (initialTier === 'medium') setQuality('low');
-        } else if (fps < 15) {
+        if (fps < 25) {
+          if (autoTier === 'high') setQuality('medium');
+          else if (autoTier === 'medium') setQuality('low');
+        } else if (fps < 14) {
           setQuality('lite');
         }
       }
@@ -58,7 +66,7 @@ export function useQuality() {
     return () => {
       cancelAnimationFrame(animId);
     };
-  }, [qualityOverride, setQuality]);
+  }, [setQuality]);
 
-  return { quality, qualityOverride };
+  return { quality };
 }
