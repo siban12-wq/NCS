@@ -84,7 +84,7 @@ export const Reach: React.FC = () => {
             callback: (token: string) => setTurnstileToken(token),
             'expired-callback': () => setTurnstileToken(null),
             'error-callback': () => setTurnstileToken(null),
-            theme: 'dark',
+            theme: 'light',
           });
           widgetIdRef.current = id;
         } catch {

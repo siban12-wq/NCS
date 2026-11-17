@@ -93,6 +93,9 @@ export const SupportPanel: React.FC = () => {
             Campus Support Desk
           </h3>
           <p className="text-xs text-paper/80">
+            <strong>Club Advisor:</strong> {siteConfig.advisor.name} ({siteConfig.advisor.designation})
+          </p>
+          <p className="text-xs text-paper/80">
             <strong>Location:</strong> {siteConfig.contact.officeLocation}
           </p>
           <p className="text-xs text-paper/80">

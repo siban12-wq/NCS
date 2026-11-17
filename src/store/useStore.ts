@@ -3,7 +3,6 @@ import { create } from 'zustand';
 export type QualityTier = 'high' | 'medium' | 'low' | 'lite';
 export type QualityOption = 'auto' | 'high' | 'medium' | 'low' | 'lite';
 export type MoodWeather = 'overwhelmed' | 'foggy' | 'hopeful' | 'calm';
-export type ThemeMode = 'dark' | 'light';
 
 export interface PhotoRecord {
   id: string;
@@ -31,11 +30,6 @@ interface AppState {
   activeSection: string;
   setScroll: (scroll: number) => void;
   setActiveSection: (section: string) => void;
-
-  // Theme
-  theme: ThemeMode;
-  toggleTheme: () => void;
-  setTheme: (theme: ThemeMode) => void;
 
   // Audio
   sound: boolean;
@@ -68,6 +62,10 @@ interface AppState {
   // Gallery Lightbox
   activePhoto: PhotoRecord | null;
   setActivePhoto: (photo: PhotoRecord | null) => void;
+
+  // SPA Page Routing ('home' | 'members' | 'pyqs')
+  currentPage: 'home' | 'members' | 'pyqs';
+  navigateTo: (page: 'home' | 'members' | 'pyqs') => void;
 }
 
 export const useStore = create<AppState>((set, get) => ({
@@ -76,24 +74,6 @@ export const useStore = create<AppState>((set, get) => ({
   setScroll: (scroll) => set({ scroll }),
   setActiveSection: (activeSection) => set({ activeSection }),
 
-  // Persistent Theme
-  theme: (typeof window !== 'undefined' && (localStorage.getItem('ncs-theme') as ThemeMode)) || 'dark',
-  toggleTheme: () => {
-    const next = get().theme === 'dark' ? 'light' : 'dark';
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('ncs-theme', next);
-      document.documentElement.setAttribute('data-theme', next);
-    }
-    set({ theme: next });
-  },
-  setTheme: (theme) => {
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('ncs-theme', theme);
-      document.documentElement.setAttribute('data-theme', theme);
-    }
-    set({ theme });
-  },
-
   // Audio state
   sound: false,
   toggleSound: () => set((state) => ({ sound: !state.sound })),
@@ -101,9 +81,15 @@ export const useStore = create<AppState>((set, get) => ({
 
   // Quality
   quality: 'high',
-  qualityOverride: 'auto',
+  qualityOverride:
+    (typeof window !== 'undefined' && (localStorage.getItem('ncs-quality') as QualityOption)) || 'auto',
   setQuality: (quality) => set({ quality }),
-  setQualityOverride: (qualityOverride) => set({ qualityOverride }),
+  setQualityOverride: (qualityOverride) => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('ncs-quality', qualityOverride);
+    }
+    set({ qualityOverride });
+  },
 
   // Reduced motion
   reducedMotion: typeof window !== 'undefined' && typeof window.matchMedia === 'function' ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false,
@@ -125,4 +111,33 @@ export const useStore = create<AppState>((set, get) => ({
   // Lightbox
   activePhoto: null,
   setActivePhoto: (activePhoto) => set({ activePhoto }),
+
+  // SPA Page Routing
+  currentPage:
+    typeof window !== 'undefined' &&
+    (window.location.pathname.startsWith('/members') || window.location.hash.includes('members'))
+      ? 'members'
+      : typeof window !== 'undefined' &&
+        (window.location.pathname.startsWith('/pyqs') || window.location.hash.includes('pyqs'))
+      ? 'pyqs'
+      : 'home',
+  navigateTo: (page) => {
+    if (typeof window !== 'undefined') {
+      const url = page === 'members' ? '/members' : page === 'pyqs' ? '/pyqs' : '/';
+      window.history.pushState(null, '', url);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+    set({ currentPage: page });
+  },
 }));
+
+// Listen to browser back/forward navigation
+if (typeof window !== 'undefined') {
+  window.addEventListener('popstate', () => {
+    const isMembers =
+      window.location.pathname.startsWith('/members') || window.location.hash.includes('members');
+    const isPyqs =
+      window.location.pathname.startsWith('/pyqs') || window.location.hash.includes('pyqs');
+    useStore.setState({ currentPage: isMembers ? 'members' : isPyqs ? 'pyqs' : 'home' });
+  });
+}

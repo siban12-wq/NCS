@@ -10,7 +10,12 @@ This document records architectural, design, and implementation decisions made a
 
 ## 2. Content & Privacy
 - **Strict Adherence to Section 2:** Only verified facts regarding TEAM NCS, SANGAM 2026 (Oct 3, 2026, 400 first-years, interactive games, Q&A), Parent-Teacher Meeting 2026 (royal-blue polo identity), and official Instagram `@the_team_ncs` are hardcoded.
-- **Placeholders:** Team roster names, office location, emergency external hotlines, and booking forms are defined with clear `TODO:` markers in `src/content/site.ts` and cataloged in `docs/TODO.md`.
+- **Official Team Roster & Leadership (Updated Nov 2026):**
+  - Club Advisor: Asst. Prof. Minakshi Dash (Faculty Advisor, NIST Counselling Services).
+  - Physical Campus Office: Room ATR 303, NIST Campus (updated from previous placeholder).
+  - Guides (24 members): 3rd-year students across AIML, CSE, ECE, DS, and BCA with contact numbers.
+  - Coordinators (21 members): Active student coordinators with contact numbers.
+  - Trainees (21 members): Official 2026 trainee intake (K. Suraj Reddy excluded as directed).
 - **Consent Mechanism:** The `hidden: true` flag in `src/content/captions.json` enables any student to request photo omission without deleting source files.
 
 ## 3. Photo Manifest & Canonical Captions

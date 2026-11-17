@@ -4,9 +4,8 @@ import * as THREE from 'three';
 import { useStore } from '@/store/useStore';
 import { CameraRig } from './CameraRig';
 import { SkyDome } from './SkyDome';
-import { Ribbons } from './Ribbons';
-import { Orb } from './Orb';
-import { Weather } from './Weather';
+import { FloatingLogo } from './FloatingLogo';
+import { FloatingElements } from './FloatingElements';
 import { Particles } from './Particles';
 import { MemoryCorridor } from './MemoryCorridor';
 import { Effects } from './Effects';
@@ -35,7 +34,7 @@ export const SceneRoot: React.FC = () => {
     >
       <Canvas
         gl={{
-          antialias: false,
+          antialias: true,
           powerPreference: 'high-performance',
           alpha: true,
         }}
@@ -44,7 +43,7 @@ export const SceneRoot: React.FC = () => {
         onCreated={({ gl }) => {
           gl.outputColorSpace = THREE.SRGBColorSpace;
           gl.toneMapping = THREE.ACESFilmicToneMapping;
-          gl.toneMappingExposure = 1.05;
+          gl.toneMappingExposure = 1.0;
 
           // Handle webglcontextlost
           gl.domElement.addEventListener(
@@ -60,16 +59,27 @@ export const SceneRoot: React.FC = () => {
       >
         <Suspense fallback={null}>
           <CameraRig />
-          <ambientLight intensity={0.4} />
-          <directionalLight position={[5, 8, 5]} intensity={1.2} color="#FFE2A8" />
-          <pointLight position={[0, 0, 0]} intensity={2.0} color="#5ED3C8" distance={10} />
 
+          {/* Normal, natural daylight illumination (no fancy/blinding neon spotlights) */}
+          <ambientLight intensity={0.9} color="#FFFFFF" />
+          <directionalLight position={[5, 8, 5]} intensity={1.15} color="#FFFFFF" castShadow />
+          <directionalLight position={[-5, -2, -3]} intensity={0.4} color="#DCEBFA" />
+
+          {/* Serene sky backdrop */}
           <SkyDome />
-          <Ribbons />
-          <Orb />
-          <Weather />
+
+          {/* Centerpiece 3D Floating Interactive Logo */}
+          <FloatingLogo />
+
+          {/* Surrounding 3D Floating Elements with Parallax Depth */}
+          <FloatingElements />
+
+          {/* Subtle Ambient Daylight Motes */}
           <Particles />
+
+          {/* Interactive Memories Photo Gallery Corridor */}
           <MemoryCorridor />
+
           <Effects />
         </Suspense>
       </Canvas>

@@ -6,7 +6,6 @@ import { Lightbox } from '@/ui/Lightbox';
 import { ProgressRiver } from '@/ui/ProgressRiver';
 import { Hero } from '@/sections/Hero';
 import { About } from '@/sections/About';
-import { Breathe } from '@/sections/Breathe';
 import { Mood } from '@/sections/Mood';
 import { LetGo } from '@/sections/LetGo';
 import { Events } from '@/sections/Events';
@@ -64,7 +63,6 @@ export const LiteApp: React.FC = () => {
       <main className="relative z-10">
         <Hero />
         <About />
-        <Breathe />
         <Mood />
         <LetGo />
         <Events />

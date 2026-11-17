@@ -4,10 +4,17 @@ import { getDeviceSpecs, hasWebGL } from '@/lib/device';
 
 export function useQuality() {
   const quality = useStore((state) => state.quality);
+  const qualityOverride = useStore((state) => state.qualityOverride);
   const setQuality = useStore((state) => state.setQuality);
 
   useEffect(() => {
-    // 100% Automatic Graphics Optimization as per phone / hardware
+    // If user explicitly chose a manual graphics setting (high, medium, low, lite), apply it directly
+    if (qualityOverride !== 'auto') {
+      setQuality(qualityOverride);
+      return;
+    }
+
+    // Otherwise, automatic device-based detection for phones and desktop
     const specs = getDeviceSpecs();
     if (!specs.hasGL || !hasWebGL()) {
       setQuality('lite');
@@ -23,7 +30,7 @@ export function useQuality() {
     let autoTier: QualityTier = 'high';
 
     if (isPhone) {
-      // Automatically optimize graphics for phones for smooth 60fps & battery conservation
+      // Automatic optimization for phones: prioritize smooth 60fps & battery conservation
       if (specs.memory <= 2 || specs.cores <= 2) {
         autoTier = 'low';
       } else {
@@ -40,7 +47,7 @@ export function useQuality() {
 
     setQuality(autoTier);
 
-    // Dynamic 1.5-second FPS probe: automatically steps down if phone experiences frame drops
+    // Dynamic 1.5-second FPS probe for auto mode
     let frameCount = 0;
     const startTime = performance.now();
     let animId: number;
@@ -66,7 +73,7 @@ export function useQuality() {
     return () => {
       cancelAnimationFrame(animId);
     };
-  }, [setQuality]);
+  }, [qualityOverride, setQuality]);
 
-  return { quality };
+  return { quality, qualityOverride };
 }

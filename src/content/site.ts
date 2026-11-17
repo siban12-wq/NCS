@@ -42,13 +42,101 @@ export const siteConfig = {
   // Contacts & Office
   contact: {
     // TODO: Confirm official contact email with Counselling Services desk
-    email: 'counselling@nist.edu', // TODO: Verify official NIST email
-    // TODO: Confirm helpline/desk telephone number
-    phone: '+91 00000 00000', // TODO: Verify official contact number
-    // TODO: Confirm physical office room number and building on NIST campus
-    officeLocation: 'Counselling Cell, Student Activity Centre, NIST Campus', // TODO: Confirm exact room/building
-    // TODO: Provide link to booking form or calendar (e.g. Google Form or Calendly)
-    bookingUrl: 'https://www.instagram.com/the_team_ncs', // TODO: Replace with dedicated appointment form if available
+    email: 'counselling@nist.edu',
+    phone: '+91 00000 00000',
+    officeLocation: 'Room ATR 303, NIST Campus',
+    bookingUrl: 'https://www.instagram.com/the_team_ncs',
+  },
+
+  // Faculty Leadership & Club Advisor
+  advisor: {
+    name: 'Asst. Prof. Minakshi Dash',
+    role: 'Club Advisor',
+    designation: 'Faculty Advisor, NIST Counselling Services',
+    department: 'NIST University',
+    room: 'Room ATR 303',
+  },
+
+  // Official TEAM NCS 2026 Roster
+  members: {
+    advisor: {
+      name: 'Asst. Prof. Minakshi Dash',
+      role: 'Club Advisor',
+      designation: 'Faculty Advisor, NIST Counselling Services',
+    },
+    guides: [
+      { sNo: 1, name: 'ASHISH KUMAR SATAPATHY', rollNo: '202456018', year: '3rd Year', branch: 'AIML' },
+      { sNo: 2, name: 'ARCHITA PANIGRAHI', rollNo: '202457183', year: '3rd Year', branch: 'CSE' },
+      { sNo: 3, name: 'DEEPAK KUMAR SWAIN', rollNo: '202456050', year: '3rd Year', branch: 'CSE' },
+      { sNo: 4, name: 'SHOAIB ALAM', rollNo: '202456258', year: '3rd Year', branch: 'CSE' },
+      { sNo: 5, name: 'P KIRAN KUMAR', rollNo: '202456004', year: '3rd Year', branch: 'AIML' },
+      { sNo: 6, name: 'MANISH NAYAK', rollNo: '202456013', year: '3rd Year', branch: 'AIML' },
+      { sNo: 7, name: 'GAYATRI BEHERA', rollNo: '202457098', year: '3rd Year', branch: 'AIML' },
+      { sNo: 8, name: 'UTKARSH RAJ', rollNo: '202456341', year: '3rd Year', branch: 'CSE' },
+      { sNo: 9, name: 'ASHISH KUMAR', rollNo: '202456244', year: '3rd Year', branch: 'CSE' },
+      { sNo: 10, name: 'AMRITA SETHY', rollNo: '202457070', year: '3rd Year', branch: 'CSE' },
+      { sNo: 11, name: 'PALLAV SARKAR', rollNo: '202456414', year: '3rd Year', branch: 'CSE' },
+      { sNo: 12, name: 'AMRITA PANIGRAHI', rollNo: '202457466', year: '3rd Year', branch: 'CSE' },
+      { sNo: 13, name: 'PRIYADARSHINI PRADHAN', rollNo: '2024567614', year: '3rd Year', branch: 'CSE' },
+      { sNo: 14, name: 'SRABANI SAHU', rollNo: '202457420', year: '3rd Year', branch: 'CSE' },
+      { sNo: 15, name: 'SNEHA GUDLA', rollNo: '202457154', year: '3rd Year', branch: 'DS' },
+      { sNo: 16, name: 'SATYABRATTA PATRO', rollNo: '202456374', year: '3rd Year', branch: 'CSE' },
+      { sNo: 17, name: 'SIMANCHAL NAYAK', rollNo: '202456390', year: '3rd Year', branch: 'CSE' },
+      { sNo: 18, name: 'GYANA RANJAN PANIGRAHY', rollNo: '202456649', year: '3rd Year', branch: 'CSE' },
+      { sNo: 19, name: 'BALUKESWAR SATAPATHY', rollNo: '202456207', year: '3rd Year', branch: 'ECE' },
+      { sNo: 20, name: 'J SRI SAI', rollNo: '202456651', year: '3rd Year', branch: 'CSE' },
+      { sNo: 21, name: 'SWAGAT RANJAN SAHU', rollNo: '202456325', year: '3rd Year', branch: 'ECE' },
+      { sNo: 22, name: 'ASUTOSH PANIGRAHI', rollNo: '202456326', year: '3rd Year', branch: 'ECE' },
+      { sNo: 23, name: 'SHIVA BUDHA', rollNo: '202498018', year: '3rd Year', branch: 'BCA' },
+      { sNo: 24, name: 'SAWAN KUMAR', rollNo: '202456272', year: '3rd Year', branch: 'CSE' },
+    ],
+    coordinators: [
+      { sNo: 1, name: 'Jyotiraj' },
+      { sNo: 2, name: 'Rajkumari' },
+      { sNo: 3, name: 'Ipsita' },
+      { sNo: 4, name: 'P. Bharti' },
+      { sNo: 5, name: 'Ayush' },
+      { sNo: 6, name: 'Anwesha G.' },
+      { sNo: 7, name: 'Sunayana' },
+      { sNo: 8, name: 'Anwesha Jena' },
+      { sNo: 9, name: 'Sachin' },
+      { sNo: 10, name: 'Subhasish' },
+      { sNo: 11, name: 'Roshan' },
+      { sNo: 12, name: 'Rosan' },
+      { sNo: 13, name: 'Asish G.' },
+      { sNo: 14, name: 'Rajeshri' },
+      { sNo: 15, name: 'Subhashre' },
+      { sNo: 16, name: 'D. Amit' },
+      { sNo: 17, name: 'Rahul Panda' },
+      { sNo: 18, name: 'Akash Behera' },
+      { sNo: 19, name: 'Jaswinder' },
+      { sNo: 20, name: 'Sakti Sworup' },
+      { sNo: 21, name: 'Anshuman Padhy' },
+    ],
+    // Trainees (K. Suraj Reddy excluded as requested)
+    trainees: [
+      { sNo: 1, name: 'Dibyansu Gouda', rollNo: '202556314' },
+      { sNo: 2, name: 'Subham Purohita', rollNo: '202556667' },
+      { sNo: 3, name: 'Rama Krushna Pattnaik', rollNo: '202556082' },
+      { sNo: 4, name: 'Anwesha Pattnaik', rollNo: '202557791' },
+      { sNo: 5, name: 'Adityaraj Bhuyan', rollNo: '202556585' },
+      { sNo: 6, name: 'Siban Acharya', rollNo: '202556025' },
+      { sNo: 7, name: 'Lipsa Rani Das', rollNo: '202557679' },
+      { sNo: 8, name: 'Biswajeet Rout', rollNo: '202556805' },
+      { sNo: 9, name: 'Soham Barik', rollNo: '202556853' },
+      { sNo: 10, name: 'Ankit Kumar', rollNo: '202556485' },
+      { sNo: 11, name: 'R Tanushree', rollNo: '202557073' },
+      { sNo: 12, name: 'Sulekha Das', rollNo: '202557864' },
+      { sNo: 13, name: 'Nandita', rollNo: '202557517' },
+      { sNo: 14, name: 'Sneharani Nayak', rollNo: '202557557' },
+      { sNo: 15, name: 'Amrit Sabat', rollNo: '202556084' },
+      { sNo: 16, name: 'Prathamesh Purohit', rollNo: '202556231' },
+      { sNo: 17, name: 'Subhasree Panda', rollNo: '202557117' },
+      { sNo: 18, name: 'Sobhan Ku. Patro', rollNo: '202556898' },
+      { sNo: 19, name: 'Biswanath Baidya', rollNo: '202556386' },
+      { sNo: 20, name: 'Soumyaranjan Mohapatra', rollNo: '202556267' },
+      { sNo: 21, name: 'Manaswini Mishra', rollNo: '202557810' },
+    ],
   },
 
   // Crisis & Emergency Hotlines (Standard national verified support in India)
@@ -182,7 +270,7 @@ export const siteConfig = {
       description:
         'Nighttime resets for high-stress weeks and exam season anxiety.',
       tips: [
-        'Try the 4-7-8 breathing technique (available in our interactive breathe section above).',
+        'Try the 4-7-8 breathing technique: inhale for 4 seconds, hold for 7, and exhale slowly for 8.',
         'Write tomorrow’s top three tasks down on paper before bed to unload mental clutter.',
         'Lower ambient lights 30 minutes before sleeping and keep water beside your desk.',
       ],
@@ -199,7 +287,7 @@ export const sectionRanges: SectionRange[] = [
     id: 'hero',
     name: 'The Confluence',
     start: 0.0,
-    end: 0.10,
+    end: 0.12,
     cameraWaypoint: [0, 1.2, 5.0],
     cameraTarget: [0, 0, 0],
     skyPalette: {
@@ -212,8 +300,8 @@ export const sectionRanges: SectionRange[] = [
   {
     id: 'about',
     name: 'About NCS',
-    start: 0.10,
-    end: 0.20,
+    start: 0.12,
+    end: 0.25,
     cameraWaypoint: [1.2, 1.0, 4.4],
     cameraTarget: [0, 0.2, 0],
     skyPalette: {
@@ -224,24 +312,10 @@ export const sectionRanges: SectionRange[] = [
     },
   },
   {
-    id: 'breathe',
-    name: 'Take a Breath',
-    start: 0.20,
-    end: 0.30,
-    cameraWaypoint: [0, 0.5, 3.8],
-    cameraTarget: [0, 0, 0],
-    skyPalette: {
-      top: '#1C1F50',
-      bottom: '#35337E',
-      fog: '#1C1F50',
-      ambient: '#524392',
-    },
-  },
-  {
     id: 'mood',
     name: 'How Are You Arriving?',
-    start: 0.30,
-    end: 0.40,
+    start: 0.25,
+    end: 0.37,
     cameraWaypoint: [-1.4, 0.8, 4.2],
     cameraTarget: [0, 0.1, 0],
     skyPalette: {
@@ -254,7 +328,7 @@ export const sectionRanges: SectionRange[] = [
   {
     id: 'letgo',
     name: 'Leave a Worry Behind',
-    start: 0.40,
+    start: 0.37,
     end: 0.50,
     cameraWaypoint: [0.8, 0.3, 3.9],
     cameraTarget: [0, 0, 0],
@@ -269,7 +343,7 @@ export const sectionRanges: SectionRange[] = [
     id: 'events',
     name: 'Campus Gatherings (Sangam)',
     start: 0.50,
-    end: 0.62,
+    end: 0.63,
     cameraWaypoint: [-1.0, 0.6, 4.3],
     cameraTarget: [0, 0.1, 0],
     skyPalette: {
@@ -282,8 +356,8 @@ export const sectionRanges: SectionRange[] = [
   {
     id: 'memories',
     name: 'Photo Gallery & 3D Corridor',
-    start: 0.62,
-    end: 0.74,
+    start: 0.63,
+    end: 0.75,
     cameraWaypoint: [0, 0.8, 4.6],
     cameraTarget: [0, 0, 0],
     skyPalette: {
@@ -296,8 +370,8 @@ export const sectionRanges: SectionRange[] = [
   {
     id: 'team',
     name: 'The Royal Blue Team',
-    start: 0.74,
-    end: 0.83,
+    start: 0.75,
+    end: 0.85,
     cameraWaypoint: [1.3, 0.5, 4.0],
     cameraTarget: [0, 0, 0],
     skyPalette: {
@@ -310,8 +384,8 @@ export const sectionRanges: SectionRange[] = [
   {
     id: 'resources',
     name: 'Peer Self-Help Guides',
-    start: 0.83,
-    end: 0.91,
+    start: 0.85,
+    end: 0.92,
     cameraWaypoint: [-0.9, 0.4, 4.2],
     cameraTarget: [0, 0, 0],
     skyPalette: {

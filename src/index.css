@@ -5,36 +5,25 @@
 @tailwind utilities;
 
 :root {
-  --c-indigo-900: #12163A;
-  --c-indigo-700: #1D2563;
+  /* Clean Light Blue Serene Theme */
+  --c-indigo-900: #E2EEF9;
+  --c-indigo-700: #CDE2F6;
   --c-royal: #2340C8;
-  --c-teal: #5ED3C8;
-  --c-lavender: #B9A7F5;
-  --c-peach: #FFC9A3;
-  --c-gold: #FFE2A8;
-  --c-ink: #0E1230;
-  --c-paper: #F8F6FF;
+  --c-teal: #0D9488;
+  --c-lavender: #3B5278;
+  --c-peach: #D96B43;
+  --c-gold: #B45309;
+  --c-ink: #0A1426;
+  --c-paper: #0F1F38;
 
-  /* Theme Defaults (Dark / Cosmic Indigo) */
-  --bg-primary: #12163A;
-  --text-primary: #F8F6FF;
-  --text-muted: #B9A7F5;
-  --text-accent: #FFE2A8;
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.16);
-  --glass-shadow: 0 8px 32px 0 rgba(14, 18, 48, 0.37);
-  --river-glow: rgba(94, 211, 200, 0.45);
-}
-
-[data-theme='light'] {
-  --bg-primary: #F8F6FF;
-  --text-primary: #0E1230;
-  --text-muted: #434D8A;
+  --bg-primary: #EBF3FA;
+  --text-primary: #0F1F38;
+  --text-muted: #3B5278;
   --text-accent: #2340C8;
-  --glass-bg: rgba(255, 255, 255, 0.72);
-  --glass-border: rgba(35, 64, 200, 0.18);
-  --glass-shadow: 0 8px 32px 0 rgba(35, 64, 200, 0.08);
-  --river-glow: rgba(35, 64, 200, 0.35);
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(35, 64, 200, 0.14);
+  --glass-shadow: 0 8px 32px 0 rgba(20, 50, 100, 0.08);
+  --river-glow: rgba(35, 64, 200, 0.22);
 }
 
 html, body {

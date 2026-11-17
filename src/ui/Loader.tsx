@@ -49,17 +49,17 @@ export const Loader: React.FC<LoaderProps> = ({ onFinish }) => {
       aria-valuenow={Math.round(displayProgress)}
       aria-valuemin={0}
       aria-valuemax={100}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-indigo-900 transition-opacity duration-700 pointer-events-auto"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#EBF4FC] dark:bg-indigo-900 transition-opacity duration-700 pointer-events-auto"
     >
       <div className="flex flex-col items-center gap-6 max-w-sm px-6 text-center">
-        {/* Converging streams animated symbol with official NCS logo */}
+        {/* Animated symbol with official NCS logo */}
         <div className="relative w-20 h-20 flex items-center justify-center">
-          <div className="absolute inset-0 rounded-full border-2 border-teal/40 animate-ping opacity-60" />
-          <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-royal via-teal to-peach opacity-30 animate-pulse blur-md" />
+          <div className="absolute inset-0 rounded-full border-2 border-royal/30 dark:border-teal/40 animate-ping opacity-60" />
+          <div className="absolute inset-2 rounded-full bg-gradient-to-tr from-royal via-teal to-blue-300 opacity-20 animate-pulse blur-md" />
           <img
-            src="/brand/logo-white.png"
+            src="/brand/logo.png"
             alt="TEAM NCS Logo"
-            className="relative w-14 h-14 object-contain drop-shadow-[0_0_15px_#5ED3C8] animate-pulse"
+            className="relative w-14 h-14 object-contain drop-shadow animate-pulse"
           />
         </div>
 

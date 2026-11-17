@@ -19,7 +19,6 @@ import { ProgressRiver } from '@/ui/ProgressRiver';
 // HTML Sections
 import { Hero } from '@/sections/Hero';
 import { About } from '@/sections/About';
-import { Breathe } from '@/sections/Breathe';
 import { Mood } from '@/sections/Mood';
 import { LetGo } from '@/sections/LetGo';
 import { Events } from '@/sections/Events';
@@ -28,6 +27,10 @@ import { Team } from '@/sections/Team';
 import { Resources } from '@/sections/Resources';
 import { Reach } from '@/sections/Reach';
 import { Footer } from '@/sections/Footer';
+
+// Dedicated Standalone Pages
+import { MembersPage } from '@/pages/MembersPage';
+import { PyqPage } from '@/pages/PyqPage';
 
 // Fallback & Error Handling
 import { ErrorBoundary } from '@/app/ErrorBoundary';
@@ -42,14 +45,8 @@ export const App: React.FC = () => {
   const { quality } = useQuality();
   useReducedMotion();
 
-  const theme = useStore((state) => state.theme);
   const setScroll = useStore((state) => state.setScroll);
   const setActiveSection = useStore((state) => state.setActiveSection);
-
-  // Sync theme attribute on <html>
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
 
   // Lenis Smooth Scroll Integration
   useEffect(() => {
@@ -89,9 +86,33 @@ export const App: React.FC = () => {
     };
   }, [setScroll, setActiveSection]);
 
+  const currentPage = useStore((state) => state.currentPage);
+
   // If user or device selected Lite mode, switch completely to 2D LiteApp
   if (quality === 'lite') {
     return <LiteApp />;
+  }
+
+  // If user is on the dedicated Members Directory Page (different page, not in scroll)
+  if (currentPage === 'members') {
+    return (
+      <div className="relative min-h-screen text-paper overflow-x-hidden selection:bg-teal selection:text-indigo-900">
+        <MembersPage />
+        <SupportPanel />
+        <CommandPalette />
+      </div>
+    );
+  }
+
+  // If user is on the dedicated PYQ & Midsem Vault Page (different page, not in scroll)
+  if (currentPage === 'pyqs') {
+    return (
+      <div className="relative min-h-screen text-paper overflow-x-hidden selection:bg-teal selection:text-indigo-900">
+        <PyqPage />
+        <SupportPanel />
+        <CommandPalette />
+      </div>
+    );
   }
 
   return (
@@ -116,7 +137,6 @@ export const App: React.FC = () => {
       <main className="relative z-10">
         <Hero />
         <About />
-        <Breathe />
         <Mood />
         <LetGo />
         <Events />

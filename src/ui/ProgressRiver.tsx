@@ -18,9 +18,9 @@ export const ProgressRiver: React.FC = () => {
       aria-label="Confluence Scroll River"
       className="fixed right-4 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col items-center gap-2 pointer-events-auto"
     >
-      <div className="relative w-1.5 h-48 bg-white/10 rounded-full overflow-hidden">
+      <div className="relative w-1.5 h-48 bg-slate-900/10 dark:bg-white/10 rounded-full overflow-hidden">
         <div
-          className="absolute top-0 left-0 w-full bg-gradient-to-b from-teal via-lavender to-peach rounded-full transition-all duration-150"
+          className="absolute top-0 left-0 w-full bg-gradient-to-b from-royal via-blue-400 to-teal rounded-full transition-all duration-150"
           style={{ height: `${Math.min(100, Math.max(0, scroll * 100))}%` }}
         />
       </div>
@@ -36,8 +36,8 @@ export const ProgressRiver: React.FC = () => {
               aria-label={range.name}
               className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
                 isActive
-                  ? 'bg-teal scale-150 shadow-[0_0_8px_#5ED3C8]'
-                  : 'bg-white/30 hover:bg-white/60 scale-100'
+                  ? 'bg-royal dark:bg-teal scale-150 shadow-[0_0_8px_rgba(35,64,200,0.5)]'
+                  : 'bg-slate-900/25 dark:bg-white/30 hover:bg-slate-900/50 dark:hover:bg-white/60 scale-100'
               }`}
             />
           );

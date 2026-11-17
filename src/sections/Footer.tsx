@@ -5,6 +5,7 @@ import { useStore } from '@/store/useStore';
 
 export const Footer: React.FC = () => {
   const toggleSupport = useStore((state) => state.toggleSupport);
+  const navigateTo = useStore((state) => state.navigateTo);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -14,7 +15,7 @@ export const Footer: React.FC = () => {
     <footer
       id="footer"
       aria-label="Footer and Crisis Resources"
-      className="relative z-20 bg-indigo-900/90 border-t border-white/10 text-paper py-16 px-4 sm:px-8 pointer-events-auto"
+      className="relative z-20 bg-white/85 border-t border-slate-900/10 text-paper py-16 px-4 sm:px-8 pointer-events-auto backdrop-blur-lg"
     >
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Urgent Crisis Disclaimer Banner */}
@@ -43,7 +44,7 @@ export const Footer: React.FC = () => {
           <div className="md:col-span-2 space-y-3">
             <div className="flex items-center gap-2.5">
               <img
-                src="/brand/logo-white.png"
+                src="/brand/logo.png"
                 alt="TEAM NCS Official Logo"
                 className="w-7 h-7 object-contain drop-shadow"
               />
@@ -65,9 +66,16 @@ export const Footer: React.FC = () => {
             </h4>
             <ul className="space-y-2 text-xs text-lavender">
               <li><a href="#about" className="hover:text-paper transition-colors">About NCS</a></li>
-              <li><a href="#breathe" className="hover:text-paper transition-colors">Breathing Reset</a></li>
               <li><a href="#events" className="hover:text-paper transition-colors">SANGAM 2026</a></li>
               <li><a href="#memories" className="hover:text-paper transition-colors">Memories Gallery</a></li>
+              <li>
+                <button
+                  onClick={() => navigateTo('members')}
+                  className="hover:text-paper transition-colors text-left cursor-pointer"
+                >
+                  Members Directory (66)
+                </button>
+              </li>
               <li><a href="#resources" className="hover:text-paper transition-colors">Self-Help Guides</a></li>
             </ul>
           </div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useStore } from '@/store/useStore';
-import { Search, Sparkles, Wind, Smile, Heart, Image, Users, BookOpen, MessageCircle, X } from 'lucide-react';
+import { Search, Sparkles, Smile, Heart, Image, Users, BookOpen, MessageCircle, X } from 'lucide-react';
 
 export const CommandPalette: React.FC = () => {
   const paletteOpen = useStore((state) => state.paletteOpen);
   const setPaletteOpen = useStore((state) => state.setPaletteOpen);
   const toggleSupport = useStore((state) => state.toggleSupport);
+  const navigateTo = useStore((state) => state.navigateTo);
   const [query, setQuery] = useState('');
 
   // Keyboard shortcut listener (Cmd+K / Ctrl+K)
@@ -27,12 +28,12 @@ export const CommandPalette: React.FC = () => {
 
   const commands = [
     { id: 'hero', title: 'Top / The Confluence', icon: Sparkles, section: '#hero' },
-    { id: 'breathe', title: 'Interactive Breathing Exercise', icon: Wind, section: '#breathe' },
-    { id: 'mood', title: 'Mood Check-in & Sky Shift', icon: Smile, section: '#mood' },
+    { id: 'pyqs', title: 'PYQ Vault (BEE, C Programming Question Papers)', icon: BookOpen, section: '/pyqs' },
+    { id: 'support-areas', title: 'Four Cornerstones of Support', icon: Smile, section: '#support-areas' },
     { id: 'letgo', title: 'Leave a Worry Behind (Release)', icon: Heart, section: '#letgo' },
     { id: 'events', title: 'SANGAM 2026 & PTM Gatherings', icon: BookOpen, section: '#events' },
     { id: 'memories', title: 'Memories & 3D Photo Gallery', icon: Image, section: '#memories' },
-    { id: 'team', title: 'The Royal Blue Peer Team', icon: Users, section: '#team' },
+    { id: 'team', title: 'Members Directory (Guides, Coordinators, Trainees)', icon: Users, section: '/members' },
     { id: 'resources', title: 'Self-Care & Study Guides', icon: BookOpen, section: '#resources' },
     { id: 'reach', title: 'Reach Out / Counselling Desk', icon: MessageCircle, section: '#reach' },
   ];
@@ -43,10 +44,21 @@ export const CommandPalette: React.FC = () => {
 
   const handleSelect = (section: string) => {
     setPaletteOpen(false);
-    const el = document.querySelector(section);
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+    if (section === '/members') {
+      navigateTo('members');
+      return;
     }
+    if (section === '/pyqs') {
+      navigateTo('pyqs');
+      return;
+    }
+    navigateTo('home');
+    setTimeout(() => {
+      const el = document.querySelector(section);
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 50);
   };
 
   return (
